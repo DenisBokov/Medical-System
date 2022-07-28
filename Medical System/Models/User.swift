@@ -14,18 +14,11 @@ struct User {
     let personDetails: Person
 }
 
-class Person {
+struct Person {
     let firstName: String
     let lastName: String
     let secondName: String
     let birthday: String
     let phoneNumber: String
-    
-    init(firstName: String, lastName: String, secondName: String, birthday: String, phoneNumber: String) {
-        self.firstName = firstName
-        self.secondName = secondName
-        self.lastName = lastName
-        self.birthday = birthday
-        self.phoneNumber = phoneNumber
-    }
+    let polisNumber: String
 }
