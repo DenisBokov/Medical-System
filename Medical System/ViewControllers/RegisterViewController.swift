@@ -10,6 +10,7 @@ import UIKit
 class RegisterViewController: UIViewController {
 
     @IBOutlet var birthdateTextFild: UITextField!
+    @IBOutlet var phoneNumberTextField: UITextField!
     
     let datePicker = UIDatePicker()
     
@@ -18,6 +19,7 @@ class RegisterViewController: UIViewController {
         birthdateTextFild.inputView = datePicker
         datePicker.datePickerMode = .date
         textFieldDidBeginEditing(birthdateTextFild)
+        textFieldDidBeginEditing(phoneNumberTextField)
     }
     
 
@@ -63,5 +65,14 @@ extension RegisterViewController: UITextFieldDelegate {
         )
         
         keyboardToolbar.items = [flexBarButton, doneButton]
+    }
+}
+
+extension RegisterViewController {
+    private func shoeAlert(wiht titel: String, and massage: String) {
+        let alert = UIAlertController(title: titel, message: massage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }
